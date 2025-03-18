@@ -34,15 +34,15 @@ Det finns många sätt att göra en webbplats mer tillgänglig, till exempel att
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vase Vista - Artisanal Vases</title> <!-- La in endast EN <title>-tag -->
     <meta name="description" content="Elevating spaces through thoughtfully designed vessels that blend form and function in perfect harmony." />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500&display=swap" rel="stylesheet">
   </head>
 
   <body>
     <!-- Header/Navbar -->
-    <header class="header">
+    <header class="header" role="banner"> <!-- La till ARIA-landmark -->
       <div class="container">
-        <nav class="navbar">
+        <nav class="navbar" role="navigation"> <!-- La till ARIA-landmark -->
           <a href="#home" class="logo">Vase Vista</a>
           <ul class="nav-links">
             <li><a id="1" href="#home">Home</a></li> <!-- Unika IDn samt tog bort alla tabindex -->
@@ -54,7 +54,7 @@ Det finns många sätt att göra en webbplats mer tillgänglig, till exempel att
       </div>
     </header>
  
-    <main>
+    <main role="main"> <!-- La till ARIA-landmark -->
       <!-- Hero Section -->
       <section id="home" class="hero">
         <div class="container">
@@ -63,8 +63,8 @@ Det finns många sätt att göra en webbplats mer tillgänglig, till exempel att
             <h1>Timeless Beauty <br>in Every Curve</h1> <!-- Tog bort andra <h1> -->
             <p>Each piece tells a story of craftsmanship and elegance, designed to elevate your space and inspire your senses.</p>
             <div class="hero-buttons">
-              <a href="#collection" class="btn btn-primary">Explore Collection</a>
-              <a href="#philosophy" class="btn btn-secondary">Our Philosophy</a>
+              <a href="#collection" class="btn btn-primary" aria-label="Go to the collection section">Explore Collection</a>
+              <a href="#philosophy" class="btn btn-secondary" aria-label="Go to the philosophy section">Our Philosophy</a>
             </div>
           </div>
           <div class="hero-image">
@@ -82,17 +82,17 @@ Det finns många sätt att göra en webbplats mer tillgänglig, till exempel att
           </div>
 
           <div class="category-filters"> <!-- Ändrade <div> till <button> -->
-            <button class="filter-btn active">All</button>
-            <button class="filter-btn">Ceramic</button>
-            <button class="filter-btn">Glass</button>
-            <button class="filter-btn">Porcelain</button>
+            <button class="filter-btn active" aria-label="Show all vases">All</button> <!-- La till aria-label för alla knappar i filtreringen -->
+            <button class="filter-btn" aria-label="Show only ceramic vases">Ceramic</button>
+            <button class="filter-btn" aria-label="Show only glass vases">Glass</button>
+            <button class="filter-btn" aria-label="Show only porcelain vases">Porcelain</button>
           </div>
 
            <!-- La in alt-text på alla bilderna -->
           <div class="product-grid">
             <div class="product-card">
               <div class="product-image">
-                <img src="https://images.unsplash.com/photo-1602816130091-c3c6b8b28060?q=80&w=268&h=334&auto=format&fit=crop" alt="Terra Sculptural Vase - Hand-thrown ceramic with a matte terracotta finish">
+                <img src="https://images.unsplash.com/photo-1602816130091-c3c6b8b28060?q=80&w=268&h=334&auto=format&fit=crop&fm=webp" alt="Terra Sculptural Vase - Hand-thrown ceramic with a matte terracotta finish">
               </div>
               <div class="product-info">
                 <span class="product-category">Ceramic</span>
@@ -104,7 +104,7 @@ Det finns många sätt att göra en webbplats mer tillgänglig, till exempel att
 
             <div class="product-card">
               <div class="product-image">
-                <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?q=80&w=268&h=334&auto=format&fit=crop" alt="Serenity Glass Vessel - Mouth-blown glass with a gentle gradient effect">
+                <img src="https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?q=80&w=268&h=334&auto=format&fit=crop&fm=webp" alt="Serenity Glass Vessel - Mouth-blown glass with a gentle gradient effect">
               </div>
               <div class="product-info">
                 <span class="product-category">Glass</span>
@@ -116,7 +116,7 @@ Det finns många sätt att göra en webbplats mer tillgänglig, till exempel att
 
             <div class="product-card">
               <div class="product-image">
-                <img src="https://images.unsplash.com/photo-1578500351865-ea7deed19bd0?q=80&w=268&h=334&auto=format&fit=crop" alt="Nordic Minimalist Vase - Clean lines and pure form in white porcelain">
+                <img src="https://images.unsplash.com/photo-1578500351865-ea7deed19bd0?q=80&w=268&h=334&auto=format&fit=crop&fm=webp" alt="Nordic Minimalist Vase - Clean lines and pure form in white porcelain">
               </div>
               <div class="product-info">
                 <span class="product-category">Porcelain</span>
@@ -128,7 +128,7 @@ Det finns många sätt att göra en webbplats mer tillgänglig, till exempel att
 
             <div class="product-card">
               <div class="product-image">
-                <img src="https://images.unsplash.com/photo-1582131503261-fca1d1c0589f?q=80&w=268&h=334&auto=format&fit=crop" alt="Organic Contour Vessel - Asymmetrical silhouette with a handcrafted texture">
+                <img src="https://images.unsplash.com/photo-1582131503261-fca1d1c0589f?q=80&w=268&h=334&auto=format&fit=crop&fm=webp" alt="Organic Contour Vessel - Asymmetrical silhouette with a handcrafted texture">
               </div>
               <div class="product-info">
                 <span class="product-category">Ceramic</span>
@@ -148,7 +148,7 @@ Det finns många sätt att göra en webbplats mer tillgänglig, till exempel att
             <div class="philosophy-image">
               <img src="https://images.unsplash.com/photo-1576020799627-aeac74d58064?q=80&w=600&auto=format&fit=crop" alt="Table decorations - A set dinner table with ceramic pumpkin candle holders in the middle">
               <div class="quote-box">
-                <quote>"Simplicity is the ultimate sophistication."</quote> <!-- Ändrade från <a>-tag till <quote>-tag -->
+                <blockquote>"Simplicity is the ultimate sophistication."</blockquote> <!-- Ändrade från <a>-tag till <blockquote>-tag -->
               </div>
             </div>
             <div class="philosophy-text">
@@ -190,8 +190,9 @@ Det finns många sätt att göra en webbplats mer tillgänglig, till exempel att
             
             <form class="newsletter-form">
               <div class="form-group">
-                <input type="email" placeholder="Your email address" required>
-                <button type="submit" class="btn btn-primary">Subscribe</button>
+                <label for="email-form" class="visually-hidden">Your Email</label> <!-- La till class="visually-hidden" för att gömma label-text men fungera för skärmläsare -->
+                <input type="email" id="email-form" placeholder="Your email address" required>
+                <button type="submit" class="btn btn-primary" aria-label="Subscribe to newsletter">Subscribe</button>
               </div>
             </form>
             
@@ -217,7 +218,7 @@ Det finns många sätt att göra en webbplats mer tillgänglig, till exempel att
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo"> <!-- La till ARIA-landmark -->
       <div class="container">
         <div class="footer-content">
           <div class="footer-brand">
@@ -239,9 +240,9 @@ Det finns många sätt att göra en webbplats mer tillgänglig, till exempel att
             <div class="footer-column">
               <h4>Connect</h4>
               <ul>
-                <li><a href="www.instagram.com">Instagram</a></li> <!-- La till fungerande länkar till SoMe -->
-                <li><a href="www.pinterest.com">Pinterest</a></li>
-                <li><a href="www.linkedin.com">LinkedIn</a></li>
+                <li><a href="#" target="_blank">Instagram</a></li> <!-- La till href="#"" i <a>-tag istället för <p>-tag -->
+                <li><a href="#" target="_blank">Pinterest</a></li> <!-- La även till <target="_blank"> för att öppna länkar till externa webbplatser i ny flik -->
+                <li><a href="#" target="_blank">LinkedIn</a></li>
               </ul>
             </div>
           </div>
@@ -257,7 +258,5 @@ Det finns många sätt att göra en webbplats mer tillgänglig, till exempel att
         </div>
       </div>
     </footer>
-    <!-- Kommenterar ut scriptet som inte tillför någonting för tillfället -->
-    <!-- <script src="script.js" defer></script> -->
   </body>
 </html>
